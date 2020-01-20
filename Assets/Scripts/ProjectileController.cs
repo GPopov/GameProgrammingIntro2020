@@ -11,7 +11,11 @@ public class ProjectileController : MonoBehaviour
     {
         Rigidbody rb = GetComponent<Rigidbody>();
         rb.velocity = transform.forward * ProjectileVelocity;
-        Destroy(this, TimeToLive);
+        Destroy(gameObject, TimeToLive);
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        Destroy(gameObject);
+    }
 }

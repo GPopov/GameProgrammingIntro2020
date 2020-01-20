@@ -18,6 +18,8 @@ public class Weapon : MonoBehaviour
         {
             LastShotTime = Time.time;
             GameObject newProjectile = Instantiate(Projectile, WeaponPosition.position, WeaponPosition.rotation);
+            Physics.IgnoreCollision(gameObject.GetComponent<Collider>(), 
+                                    newProjectile.GetComponent<Collider>());
         }
     }
 }

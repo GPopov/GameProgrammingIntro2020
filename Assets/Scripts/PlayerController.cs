@@ -5,7 +5,16 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float PlayerSpeed = 0.1f;
+    public float MouseDistanceThreshold = 0.15f;
     // Update is called once per frame
+    private void Start()
+    {
+        AsteroidSpawner.Instance.RegisterPlayer(gameObject);
+    }
+    private void OnDestroy()
+    {
+        AsteroidSpawner.Instance.UnregisterPlayer(gameObject);
+    }
     void Update()
     {
         float verticalAxis = Input.GetAxis("Vertical");
@@ -16,6 +25,10 @@ public class PlayerController : MonoBehaviour
 
         Vector3 displacement = new Vector3(horizontalAxis, 0, verticalAxis) * Time.deltaTime * PlayerSpeed;
         displacement = transform.rotation * displacement;
+
+        float sqrDistanceToMouse = (mouseWorldSpacePos - transform.position).sqrMagnitude;
+        if (sqrDistanceToMouse < MouseDistanceThreshold * MouseDistanceThreshold)
+            return;
 
         Rigidbody rb = GetComponent<Rigidbody>();
         rb.MovePosition(transform.position + displacement);

@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 400000}
   - component: {fileID: 8783756741755752881}
   - component: {fileID: 6527116626510703397}
+  - component: {fileID: 6555574380177708541}
+  - component: {fileID: 7128649511971182896}
   - component: {fileID: 5559709589867508150}
   m_Layer: 0
   m_Name: PlayerProjectile
@@ -64,6 +66,31 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 2
   m_Center: {x: 0.2215575, y: 0, z: 0}
+--- !u!114 &6555574380177708541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2cfeb162fa247f41bed5d53ef9b2947, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TagToHit: Asteroid
+--- !u!114 &7128649511971182896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd938ff8a0c76a94bab3d61093950774, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5559709589867508150
 MonoBehaviour:
   m_ObjectHideFlags: 0

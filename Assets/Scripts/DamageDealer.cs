@@ -13,7 +13,7 @@ public class DamageDealer : MonoBehaviour
             DamageReceiver receiver = collision.gameObject.GetComponent<DamageReceiver>();
             if (receiver)
             {
-                receiver.ReceiveHit();
+                receiver.ReceiveHit(gameObject);
             }
         }
     }

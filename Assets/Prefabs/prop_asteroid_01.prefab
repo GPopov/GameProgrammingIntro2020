@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 6189647100276359909}
   - component: {fileID: 2930437178426839694}
   - component: {fileID: 1711339865729889637}
-  - component: {fileID: -5477202527595770722}
   - component: {fileID: 8529685299540114080}
   - component: {fileID: 7262668223053817697}
   - component: {fileID: 702698649913390756}
@@ -63,6 +62,7 @@ MonoBehaviour:
   MaxSpeed: 1.5
   MinAngularSpeed: 0.5
   MaxAngularSpeed: 1.2
+  InitialDirection: {x: 0, y: 0, z: 0}
 --- !u!23 &6189647100276359909
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -131,22 +131,6 @@ CapsuleCollider:
   m_Height: 1.5034924
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-5477202527595770722
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6189647100274105381}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3bbd837baf9a8de46b251ca9fd5a55cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MinSpeed: 0.5
-  MaxSpeed: 1.5
-  MinAngularSpeed: 0.5
-  MaxAngularSpeed: 1.2
 --- !u!114 &8529685299540114080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,6 +144,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DestructionFx: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 3}
+  ObjectToSpawnOnDeath: {fileID: 6598635895317836826, guid: 4b5217cfdc2c579448825f40af6a997c,
+    type: 3}
+  SpawnDistance: 1
+  DeflectionAngle: 45
+  DebugDraw: 0
 --- !u!114 &7262668223053817697
 MonoBehaviour:
   m_ObjectHideFlags: 0

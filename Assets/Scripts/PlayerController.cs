@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     private void OnDestroy()
     {
         AsteroidSpawner.Instance.UnregisterPlayer(gameObject);
+        GameStateController.Instance.OnPlayerDestroyed();
     }
     void Update()
     {

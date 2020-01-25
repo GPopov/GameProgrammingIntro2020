@@ -17,6 +17,12 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
+        Weapon weapon = GetComponent<Weapon>();
+        if (Input.GetButton("Fire1"))
+        {
+            weapon.Shoot();
+        }
+
         float verticalAxis = Input.GetAxis("Vertical");
         float horizontalAxis = Input.GetAxis("Horizontal");
         float depth = Camera.main.transform.position.y - transform.position.y;
@@ -37,10 +43,6 @@ public class PlayerController : MonoBehaviour
         Quaternion rotation = Quaternion.LookRotation(lookAt);
         rb.MoveRotation(rotation);
 
-        Weapon weapon = GetComponent<Weapon>();
-        if (Input.GetButton("Fire1"))
-        {
-            weapon.Shoot();
-        }
+
     }
 }
